@@ -69,22 +69,23 @@ My final model consisted of the following layers:
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
 | Convolution 5x5     	| 1x1 stride, same padding, outputs 28x28x6  	|
+| Batch Norm            |   											|
+| RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6   				|
-| Batch Norm            |   											|
-| RELU					|												|
 | Convolution 5x5     	| 1x1 stride, same padding, outputs 10x10x16 	|
+| Batch Norm            |   											|
+| RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16   				|
-| Batch Norm            |   											|
-| RELU					|												|
-| Fully connected		| 120        									|
-| Batch Norm            |   											|
-| RELU					|												|
-| Dropout       		|												|
-| Fully connected		| 84        									|
+| Flatten   	      	| outputs 400   			                	|
+| Fully connected		| 400 -> 120        						    |
 | Batch Norm            |   											|
 | RELU					|												|
 | Dropout       		|												|
-| Fully connected		| 43        									|
+| Fully connected		| 120 -> 84        								|
+| Batch Norm            |   											|
+| RELU					|												|
+| Dropout       		|												|
+| Fully connected		| 120 -> 43        								|
 | Softmax				|             									|
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
@@ -135,7 +136,7 @@ Here are the results of the prediction:
 | Go straight or left   | Go straight or left                           |
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 92%
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 92%. Such a high accuracy may be explained due to high quality of the images: no occlusions, good lighting with no shadows, no strong distortions or motions blurs. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
