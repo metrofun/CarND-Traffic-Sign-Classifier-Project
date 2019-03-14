@@ -121,7 +121,7 @@ Here are five German traffic signs that I found on the web:
 ![13][real_13] ![14][real_14] ![25][real_25] 
 ![37][real_37] ![38][real_38]
 
-All images were correctly classified.
+All 5 images have good brightness/contrast ratios with no jitter or occlusion. Background can be easily discriminated from the foreground sign due to having different colors. The size, position and angles of signs are close to those in the training set. Only "Keep Right", "Go straight or left" and "Road Work" signs have some small foreground clutter from other truncated signs.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
